@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
-    extend: {
+      fontFamily: {
+        'sans': ['Poppins', 'sans-serif']
+      },    
+      extend: {
       backgroundImage:{
         "home": "url('/assets/bg.png')"
       }
