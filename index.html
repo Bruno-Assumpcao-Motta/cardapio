@@ -339,8 +339,19 @@
                     <!-- No celular fica em 90% e no cumputador fica com 600px -->
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">  
             <h2 class="text-center font-bold text-2x mb-2">Meu carrinho</h2>
+
             <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
             <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+
+            <p class="font-bold mt-4">Endereço de entrega:</p>
+            <input 
+                type="text"
+                placeholder="Digite seu endereço completo..."
+                id="address"
+                class="w-full border-2 p-1 rounded my-1"
+            />
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
         </div>
     </div>
