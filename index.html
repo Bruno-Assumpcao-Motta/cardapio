@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/output.css">
+    <link rel="stylesheet" href="./styles/output.css" />
     <title>Kill Hunger - A melhor forma de matar a fome.</title>
 </head>
 <body>
@@ -335,7 +338,7 @@
     <!-- FIM MENU -->
 
     <!-- MODAL CART -->
-    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center">
+    <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
                     <!-- No celular fica em 90% e no cumputador fica com 600px -->
         <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">  
             <h2 class="text-center font-bold text-2x mb-2">Meu carrinho</h2>
@@ -367,7 +370,7 @@
         <button class="flex items-center gap-2 text-white font-bold"
         id="cart-btn"
         >
-            (<span id="cart-count">2</span>)
+            (<span id="cart-count">0</span>)
             Ver meu carrinho
             <i class="fa fa-cart-plus text-lg text-white"></i>
         </button>
