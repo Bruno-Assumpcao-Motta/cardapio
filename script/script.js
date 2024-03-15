@@ -4,3 +4,4 @@ const cartModal = document.getElementById("cart-modal") // modal
 const cartItemsContainer = document.getElementById("cart-items") //items do carrinho//
 const cartTotal = document.getElementById("cart-total")
 const checkoutBtn = document.getElementById("checkout-btn")
+const closeModalBtn = document.getElementById("close-modal-btn")
