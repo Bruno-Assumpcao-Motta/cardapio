@@ -25,3 +25,14 @@ cartModal.addEventListener("click", function(event){
 closeModalBtn.addEventListener("click", function(){
     cartModal.style.display = "none"
 })
+
+menu.addEventListener("click", function(event){
+    let parentButton = event.target.closest(".add-to-cart-btn")
+
+    if(parentButton){
+        const name = parentButton.getAttribute("data-name")
+        const price = parceFloat(parentButton.getAttribute("data-price"))
+        console.log(name)
+        console.log(price)
+    }
+})
