@@ -8,3 +8,20 @@ const closeModalBtn = document.getElementById("close-modal-btn") //sair do modal
 const closeCounter =  document.getElementById("cart-count") //quantidades no carrinho//
 const addressInput = document.getElementById("address") //endereço de compra//
 const addressWarn = document.getElementById("address-warn")//aviso de necessidade de preencher o endereço//
+
+//Abrir o modal do carrinho.
+cartBtn.addEventListener("click", function(){
+    cartModal.style.display = "flex"
+})
+
+//Fechar o modal quando clicar fora
+cartModal.addEventListener("click", function(event){
+    if(event.target === cartModal) {
+        cartModal.style.display = "none"
+    }
+})
+
+//Fechar o modal pelo botão fechar
+closeModalBtn.addEventListener("click", function(){
+    cartModal.style.display = "none"
+})
