@@ -32,7 +32,10 @@ menu.addEventListener("click", function(event){
     if(parentButton){
         const name = parentButton.getAttribute("data-name")
         const price = parceFloat(parentButton.getAttribute("data-price"))
-        console.log(name)
-        console.log(price)
+        
+        //Adicionar no carrinho.
+        
+
+
     }
 })
