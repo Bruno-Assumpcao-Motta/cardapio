@@ -43,11 +43,19 @@ function addToCart(name,price){
 
     if(existingItem){
         //Se o item ja existe, aumente apenas a quantidade + 1
+        existingItem.quantity += 1;
+        
+    } else {
+        cart.push({
+            name,
+            price,
+            quantity: 1,
+        })
     }
 
-    cart.push({
-        name,
-        price,
-        quantity: 1,
-    })
+    
+}
+//Atualiza o carrinho
+function updateCartModal(){
+
 }
