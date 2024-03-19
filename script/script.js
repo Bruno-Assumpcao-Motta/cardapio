@@ -134,19 +134,50 @@ addressInput.addEventListener("input", function(event){
         addressWarn.classList.add("hidden")
     }
 })
-
+//Finalizar pedido
 checkoutBtn.addEventListener("click", function(){
+
+    //const isOpen = checkRestaurantOpen();
+    //if(!isOpen){
+    //    alert("RESTAURANTE FECHADO NO MOMENTO!")
+    //}
+
     if(cart.length === 0) return;
     if(addressInput.value === ""){
         addressWarn.classList.remove("hidden")
         addressInput.classList.add("border-red-500")
         return;
     } 
+
+    //Enviar o pedido para a api do whatsApp
+
+    const cartItems = cart.map((item) => {
+        return (
+            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
+        )
+    }).join("")
+
+    const message = encodeURIComponent(cartItems)
+    const phone = "21994906145"
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}, "_blank"`)
 })
 //Verificar a hora e manipular o card horario
 function checkRestaurantOpen(){
     const data = new Date();
     const hora = data.getHours();
-    return hora >= 18 && hora < 22;
+    return hora >= 18 && hora < 22; 
+    //true = restaurante esta aberto
 
+}
+
+const spanItem = document.getElementById("data-span")
+const isOpen = checkRestaurantOpen();
+
+if(isOpen){
+    spanItem.classList.remove("bg-red-500");
+    spanItem.classList.add("bg-green-600")
+} else {
+    spanItem.classList.remove("bg-green-600")
+    spanItem.classList.add("bg-red-500")
 }
