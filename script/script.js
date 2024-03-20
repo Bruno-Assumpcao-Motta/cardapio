@@ -155,12 +155,12 @@ checkoutBtn.addEventListener("click", function(){
         return (
             ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
         )
-    }).join("")
+    }).join("") // junta todo o array em um texto unico
 
     const message = encodeURIComponent(cartItems)
     const phone = "21994906145"
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}, "_blank"`)
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 })
 //Verificar a hora e manipular o card horario
 function checkRestaurantOpen(){
