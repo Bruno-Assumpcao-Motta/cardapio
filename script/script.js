@@ -137,10 +137,11 @@ addressInput.addEventListener("input", function(event){
 //Finalizar pedido
 checkoutBtn.addEventListener("click", function(){
 
-    //const isOpen = checkRestaurantOpen();
-    //if(!isOpen){
-    //    alert("RESTAURANTE FECHADO NO MOMENTO!")
-    //}
+    const isOpen = checkRestaurantOpen();
+    if(!isOpen){
+        alert("RESTAURANTE FECHADO NO MOMENTO!")
+        return;
+    }
 
     if(cart.length === 0) return;
     if(addressInput.value === ""){
@@ -160,8 +161,14 @@ checkoutBtn.addEventListener("click", function(){
     const message = encodeURIComponent(cartItems)
     const phone = "21994906145"
 
+
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+
+    cart = [];
+    updateCartModal();
 })
+
+
 //Verificar a hora e manipular o card horario
 function checkRestaurantOpen(){
     const data = new Date();
