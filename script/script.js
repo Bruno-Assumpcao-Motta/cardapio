@@ -138,10 +138,21 @@ addressInput.addEventListener("input", function(event){
 checkoutBtn.addEventListener("click", function(){
 
     const isOpen = checkRestaurantOpen();
-    if(!isOpen){
-        alert("RESTAURANTE FECHADO NO MOMENTO!")
-        return;
-    }
+        if(!isOpen){
+            Toastify({
+                text: "Ops o restaurante está fechado! Verifique o horário de funcionamento.",
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "#ef4444",
+                },
+            }).showToast();
+
+            return;
+        }
 
     if(cart.length === 0) return;
     if(addressInput.value === ""){
@@ -178,13 +189,13 @@ function checkRestaurantOpen(){
 
 }
 
-const spanItem = document.getElementById("data-span")
+const spanItem = document.getElementById("date-span")
 const isOpen = checkRestaurantOpen();
 
 if(isOpen){
     spanItem.classList.remove("bg-red-500");
     spanItem.classList.add("bg-green-600")
-} else {
+}else{
     spanItem.classList.remove("bg-green-600")
     spanItem.classList.add("bg-red-500")
 }
